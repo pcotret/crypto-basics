@@ -18,3 +18,14 @@ Original paper: https://link.springer.com/content/pdf/10.1007/3-540-60590-8_29.p
  Decrypted: [ B4CF3351 84132DBA ]
 ```
 
+## Hardware implementation
+
+```bash
+$ ./tea-firstround 
+Tiny Encryption Algorithm
+First round: [ 2E78F388 ]
+```
+
+![img](./img/first-round.png)
+
+Hey, looks like the first round of the hardware implementation is compliant with the original C code :smile:
