@@ -18,7 +18,7 @@ Original paper: https://link.springer.com/content/pdf/10.1007/3-540-60590-8_29.p
  Decrypted: [ B4CF3351 84132DBA ]
 ```
 
-## Hardware implementation
+## Hardware implementation - First round
 
 ```bash
 $ ./tea-firstround 
