@@ -28,6 +28,6 @@ Key: [ DE61E45C 40573F4B BBA9EBAF FE342544 ]
 Encrypted: [ 2E78F388 1441D348 ]
 ```
 
-![img](./img/first-round.png)
+![img](./img/1st-round.png)
 
 Hey, looks like the first round of the hardware implementation is compliant with the original C code :smile:
