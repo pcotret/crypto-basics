@@ -22,8 +22,10 @@ Original paper: https://link.springer.com/content/pdf/10.1007/3-540-60590-8_29.p
 
 ```bash
 $ ./tea-firstround 
-Tiny Encryption Algorithm
-First round: [ 2E78F388 ]
+Tiny Encryption Algorithm - First round
+Data: [ B4CF3351 84132DBA ]
+Key: [ DE61E45C 40573F4B BBA9EBAF FE342544 ]
+Encrypted: [ 2E78F388 1441D348 ]
 ```
 
 ![img](./img/first-round.png)
