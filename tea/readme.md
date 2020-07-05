@@ -31,3 +31,15 @@ Encrypted: [ 2E78F388 1441D348 ]
 ![img](./img/1st-round.png)
 
 Hey, looks like the first round of the hardware implementation is compliant with the original C code :smile:
+
+## Hardware implementation - Two round version
+There are a few things to be aware of in the main loop:
+```c
+while(n-->0) {
+  sum += delta;
+  y += ((z<<4) + k[0]) ^ (z + sum) ^ ((z>>5) + k[1]);
+  z += ((y<<4) + k[2]) ^ (y + sum) ^ ((y>>5) + k[3]);
+}
+```
+- [x] Permutation of ciphered words between each round.
+- [ ] Accumulation of `sum` => Not managed yet.
