@@ -42,4 +42,22 @@ while(n-->0) {
 }
 ```
 - [x] Permutation of ciphered words between each round.
-- [ ] Accumulation of `sum` => Not managed yet.
+- [x] Accumulation of `sum`.
+
+After some rework, we're close to the result:
+
+![2r](./img/2round_tea.png)
+
+- Ciphertext after round #1.
+- Not after round #2... :cry:
+
+The main reason is due to the `sum` variable:
+
+```c
+sum+=delta; // once for each round
+			// delta=9e3779b9
+```
+
+- [x] Round #1: `sum=9e3779b9`
+- [ ] Round #2: `sum` should be **1**3c6ef372 ! There's a problem with the carry as numbers are stored in 32-bit variables: sum keeps growing up to 37 bits after 32 rounds.
+  A solution may be to store everything in 37-bit wide variables: sum as well as key and text words, `xor` operations will need this.
