@@ -59,5 +59,4 @@ sum+=delta; // once for each round
 ```
 
 - [x] Round #1: `sum=9e3779b9`
-- [ ] Round #2: `sum` should be **1**3c6ef372 ! There's a problem with the carry as numbers are stored in 32-bit variables: sum keeps growing up to 37 bits after 32 rounds.
-  A solution may be to store everything in 37-bit wide variables: sum as well as key and text words, `xor` operations will need this.
+- [ ] Round #2: `sum` should be **1**3c6ef372. However, it's also truncated in the original implementation (stored in `unsigned long` or `uint32_t`). There must be another issue...
