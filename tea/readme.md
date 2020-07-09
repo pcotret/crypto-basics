@@ -44,27 +44,6 @@ while(n-->0) {
 - [x] Permutation of ciphered words between each round.
 - [x] Accumulation of `sum`.
 
-After some rework, we're close to the result:
-
-![2r](./img/2round_tea.png)
-
-- Ciphertext after round #1.
-- Not after round #2... :cry:
-
-One reason may be due to the `sum` variable:
-
-```c
-sum+=delta; // once for each round
-			// delta=9e3779b9
-```
-
-- [x] Round #1: `sum=9e3779b9`
-- [ ] Round #2: `sum` should be **1**3c6ef372. However, it's also truncated in the original implementation (stored in `unsigned long` or `uint32_t`). There must be another issue...
-
-### 09/07/2020
-
-The solution wasn't related to `sum`, it was a simple interconnection issue in the VHDL code... But now, we have the 2-round version working! (the 32-round version should be easy then).
-
 ![2round-ok](./img/2round_tea-ok.png)
 
 ```
