@@ -77,3 +77,8 @@ Round #2: [ 60AF870B 6EC75AA6 ]
 --------------------
 ```
 
+## Hardware implementation - 32-round version
+
+Easiest part, the 32-round TEA encryption works works as well as the C version :smile:
+
+![32](./img/32-round-ok.png)
