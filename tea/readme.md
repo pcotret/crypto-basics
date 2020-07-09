@@ -55,7 +55,7 @@ One reason may be due to the `sum` variable:
 
 ```c
 sum+=delta; // once for each round
-// delta=9e3779b9
+			// delta=9e3779b9
 ```
 
 - [x] Round #1: `sum=9e3779b9`
@@ -63,7 +63,7 @@ sum+=delta; // once for each round
 
 ### 09/07/2020
 
-The solution wasn't related to `sum`, it was a simple interconnection issue in the VHDL code... But now, we have the 2-round version working! (the 32-round bit version should be easy then).
+The solution wasn't related to `sum`, it was a simple interconnection issue in the VHDL code... But now, we have the 2-round version working! (the 32-round version should be easy then).
 
 ![2round-ok](./img/2round_tea-ok.png)
 
