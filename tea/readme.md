@@ -51,12 +51,29 @@ After some rework, we're close to the result:
 - Ciphertext after round #1.
 - Not after round #2... :cry:
 
-The main reason is due to the `sum` variable:
+One reason may be due to the `sum` variable:
 
 ```c
 sum+=delta; // once for each round
-			// delta=9e3779b9
+// delta=9e3779b9
 ```
 
 - [x] Round #1: `sum=9e3779b9`
 - [ ] Round #2: `sum` should be **1**3c6ef372. However, it's also truncated in the original implementation (stored in `unsigned long` or `uint32_t`). There must be another issue...
+
+### 09/07/2020
+
+The solution wasn't related to `sum`, it was a simple interconnection issue in the VHDL code... But now, we have the 2-round version working! (the 32-round bit version should be easy then).
+
+![2round-ok](./img/2round_tea-ok.png)
+
+```
+Tiny Encryption Algorithm - 2-round C version
+Data: [ B4CF3351 84132DBA ]
+Key: [ DE61E45C 40573F4B BBA9EBAF FE342544 ]
+Round #1: [ 2E78F388 1441D348 ]
+--------------------
+Round #2: [ 60AF870B 6EC75AA6 ]
+--------------------
+```
+
