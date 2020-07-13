@@ -65,3 +65,7 @@ Easiest part, the 32-round TEA encryption works as well as the C version :smile:
 Now, we have the decryption core as well !
 
 ![32d](./img/32-round-ok-decrypt.png)
+
+The encryption-then-decryption process works :wink:
+
+![etd](./img/encryption_decryption.png)
