@@ -61,3 +61,7 @@ Round #2: [ 60AF870B 6EC75AA6 ]
 Easiest part, the 32-round TEA encryption works as well as the C version :smile:
 
 ![32](./img/32-round-ok.png)
+
+Now, we have the decryption core as well !
+
+![32d](./img/32-round-ok-decrypt.png)
