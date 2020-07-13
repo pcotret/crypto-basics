@@ -69,3 +69,11 @@ Now, we have the decryption core as well !
 The encryption-then-decryption process works :wink:
 
 ![etd](./img/encryption_decryption.png)
+
+## Todo list
+
+- Code cleaning: variable/entity names could be clearer.
+- The implementation is based on a sequential scheme
+  - Hussain et al [Hussain 2015](https://ieeexplore.ieee.org/abstract/document/7421014) states that their sequential scheme takes 340 cycles (I get a bit less)
+  - However, their sequential coreis really smaller in terms of area
+  - **Needs some brainstorming to see where some LUTs/FFs can be saved.**
