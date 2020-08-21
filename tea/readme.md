@@ -18,47 +18,9 @@ Original paper: https://link.springer.com/content/pdf/10.1007/3-540-60590-8_29.p
  Decrypted: [ B4CF3351 84132DBA ]
 ```
 
-## Hardware implementation - First round
-
-```bash
-$ ./tea-firstround 
-Tiny Encryption Algorithm - First round
-Data: [ B4CF3351 84132DBA ]
-Key: [ DE61E45C 40573F4B BBA9EBAF FE342544 ]
-Encrypted: [ 2E78F388 1441D348 ]
-```
-
-![img](./img/1st-round.png)
-
-Hey, looks like the first round of the hardware implementation is compliant with the original C code :smile:
-
-## Hardware implementation - Two round version
-There are a few things to be aware of in the main loop:
-```c
-while(n-->0) {
-  sum += delta;
-  y += ((z<<4) + k[0]) ^ (z + sum) ^ ((z>>5) + k[1]);
-  z += ((y<<4) + k[2]) ^ (y + sum) ^ ((y>>5) + k[3]);
-}
-```
-- [x] Permutation of ciphered words between each round.
-- [x] Accumulation of `sum`.
-
-![2round-ok](./img/2round_tea-ok.png)
-
-```
-Tiny Encryption Algorithm - 2-round C version
-Data: [ B4CF3351 84132DBA ]
-Key: [ DE61E45C 40573F4B BBA9EBAF FE342544 ]
-Round #1: [ 2E78F388 1441D348 ]
---------------------
-Round #2: [ 60AF870B 6EC75AA6 ]
---------------------
-```
-
 ## Hardware implementation - 32-round version
 
-Easiest part, the 32-round TEA encryption works as well as the C version :smile:
+The 32-round TEA encryption works as well as the C version :smile:
 
 ![32](./img/32-round-ok.png)
 
@@ -70,13 +32,25 @@ The encryption-then-decryption process works :wink:
 
 ![etd](./img/encryption_decryption.png)
 
+## Synthesis results
+
+> Target : Zedboard, Zynq Z-7020 device (xc7z020clg484-1)
+
+| Site Type               | Used  | Fixed | Available | Util% |
+| ----------------------- | ----- | ----- | --------- | ----- |
+| Slice LUTs              | 16472 | 0     | 53200     | 30.96 |
+| - LUT as Logic          | 16472 | 0     | 53200     | 30.96 |
+| - LUT as Memory         | 0     | 0     | 17400     | 0.00  |
+| Slice Registers         | 10290 | 0     | 106400    | 9.67  |
+| - Register as Flip Flop | 10290 | 0     | 106400    | 9.67  |
+| - Register as Latch     | 0     | 0     | 106400    | 0.00  |
 ## Todo list
 
-- [ ] Code cleaning
-  - [ ] Variable names
-  - [ ] Entity names
-  - [ ] Comments
-- [ ] Implementation results
+- [x] Code cleaning
+  - [x] Variable names
+  - [x] Entity names
+  - [x] Comments
+- [x] Implementation results
 - [ ] Comparison with other works : Hussain et al [[Hussain 2015]](https://ieeexplore.ieee.org/abstract/document/7421014) states that their sequential scheme takes 340 cycles (I get a bit less)
 
 - However, their sequential core is really smaller in terms of area.
