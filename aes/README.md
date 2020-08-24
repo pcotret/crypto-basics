@@ -21,3 +21,8 @@
 - 10 calls for `RotLine`, `ShiftRows`, `SubBytes`: one for each round.
 - No `MixColumns` in the last round. 
 - `AddRoundKey` called before the first round.
+
+## References
+
+- [Rijndael inspector](http://www.formaestudio.com/rijndaelinspector/): Flash animation, always usefule for a step-by-step approach.
+- [FIPS 197](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf): the official NIST document. Includes test vectors.
