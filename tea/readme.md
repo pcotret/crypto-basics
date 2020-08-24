@@ -34,16 +34,16 @@ The encryption-then-decryption process works :wink:
 
 ## Synthesis results
 
-> Target : Zedboard, Zynq Z-7020 device (xc7z020clg484-1)
+> Target : Nexys4 DDR (xc7a100tcsg324-1)
 
 | Site Type               | Used  | Fixed | Available | Util% |
 | ----------------------- | ----- | ----- | --------- | ----- |
-| Slice LUTs              | 16472 | 0     | 53200     | 30.96 |
-| - LUT as Logic          | 16472 | 0     | 53200     | 30.96 |
-| - LUT as Memory         | 0     | 0     | 17400     | 0.00  |
-| Slice Registers         | 10290 | 0     | 106400    | 9.67  |
-| - Register as Flip Flop | 10290 | 0     | 106400    | 9.67  |
-| - Register as Latch     | 0     | 0     | 106400    | 0.00  |
+| Slice LUTs              | 16472 | 0     | 63400     | 25.98 |
+| - LUT as Logic          | 16472 | 0     | 63400     | 25.98 |
+| - LUT as Memory         | 0     | 0     | 19000     | 0.00  |
+| Slice Registers         | 10290 | 0     | 126800    | 8.12  |
+| - Register as Flip Flop | 10290 | 0     | 126800    | 8.12  |
+| - Register as Latch     | 0     | 0     | 126800    | 0.00  |
 ## Todo list
 
 - [x] Code cleaning
