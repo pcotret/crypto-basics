@@ -3,6 +3,6 @@
 Some implementations of well-known algorithms.
 
 - [Tiny Encryption Algorithm](./tea).
-- xTEA.
+- [xTEA](./tea).
 - DES.
 - [AES](./aes).
